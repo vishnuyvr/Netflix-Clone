@@ -19,7 +19,7 @@ const AuthScreen = () => {
 			{/* Navbar */}
 			<header className='max-w-6xl mx-auto flex items-center justify-between p-4 pb-10'>
 				<img src='/netflix-edit-logo.png' alt='Netflix Logo' className='w-32 md:w-96' />
-				<p className='flex text-white ml-80'> Login here with existing credentials<ArrowRight /></p>
+				<p className='flex text-white ml-80'> Login here with already mentioned credentials<ArrowRight /></p>
 				<Link to={"/login"} className='text-white bg-red-600 py-1 px-2 rounded'>
 					Login
 				</Link>
