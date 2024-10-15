@@ -31,7 +31,7 @@ const LoginPage = () => {
               <input type="email"
               className='w-full px-3 py-2 mt-1 border border-gray-700 rounded-md bg-transparent text-white 
               focus:outline-none focus:ring'
-              placeholder='e-mail'
+              placeholder='E-mail'
               id='email'
               value={email}
               onChange={(e) => setEmail(e.target.value)} />
@@ -63,6 +63,11 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+      <div className='flex justify-center items-center text-white'>
+        <div className='text-center'>
+          <p>Login with these credentials if you don't have an account - E-mail: <span className='font-bold'>vishnu@gmail.com </span>, Password: <span className='font-bold'>123456</span></p>
+        </div>
+    </div>
     </div>
   );
 };
