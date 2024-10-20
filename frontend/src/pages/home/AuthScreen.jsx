@@ -3,11 +3,21 @@ import LoginPage from '../LoginPage';
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { ArrowRight } from 'lucide-react';
+import { useAuthStore } from '../../store/authUser.js';
 
 
 const AuthScreen = () => {
-    const [email, setEmail] = useState("");
-	const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useAuthStore();
+  const navigate = useNavigate();
+ 
+  const handleLogin2 = (e) => {
+    e.preventDefault();
+	setEmail("vishnu@gmail.com");
+	setPassword("123456");
+    login({ email: "vishnu@gmail.com", password: "123456" });
+  };
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
@@ -19,7 +29,10 @@ const AuthScreen = () => {
 			{/* Navbar */}
 			<header className='max-w-6xl mx-auto flex items-center justify-between p-4 pb-10'>
 				<img src='/netflix-edit-logo.png' alt='Netflix Logo' className='w-32 md:w-96' />
-				<p className='flex text-white ml-80'> Login here with already mentioned credentials<ArrowRight /></p>
+				{/*<p className='flex text-white ml-80'> Login here with already mentioned credentials<ArrowRight /></p>*/}
+				<Link to={"/"} onClick={handleLogin2} className='text-white font-semibold bg-red-600 py-1 px-2 rounded'>
+					Access WatchPage directly
+				</Link>
 				<Link to={"/login"} className='text-white bg-red-600 py-1 px-2 rounded'>
 					Login
 				</Link>
